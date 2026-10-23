@@ -50,13 +50,13 @@ app.use('/api/transactions', transactionRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 
 // In production, serve frontend build if placed in client/dist
-if (process.env.NODE_ENV === 'production') {
-  const clientDist = path.join(__dirname, '../client/dist');
-  app.use(express.static(clientDist));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(clientDist, 'index.html'));
-  });
-}
+// if (process.env.NODE_ENV === 'production') {
+//   const clientDist = path.join(__dirname, '../client/dist');
+//   app.use(express.static(clientDist));
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(clientDist, 'index.html'));
+//   });
+// }
 
 // Error Handling Middlewares
 app.use(notFound);
